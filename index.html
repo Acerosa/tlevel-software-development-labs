@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Library Management Starter</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="js/book-team.js" defer></script>
+  <script src="js/loan-team.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell">
+      <p class="eyebrow">Software Development Team Challenge</p>
+      <h1>Library Management System</h1>
+      <p>Starter application for two development teams</p>
+    </div>
+  </header>
+  <main class="shell">
+    <nav class="tabs" aria-label="Application sections">
+      <button class="tab selected" type="button" data-tab="catalogue" aria-current="page">Book catalogue</button>
+      <button class="tab" type="button" data-tab="borrowing">Borrowing and returns</button>
+    </nav>
+    <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+
+    <section id="catalogue" class="section">
+      <h2>Book catalogue</h2>
+      <p class="hint">The five sample books are already displayed. Team A will add book management.</p>
+      <div class="grid">
+        <form id="book-form" class="panel">
+          <h3 id="book-form-heading">Add or edit a book</h3>
+          <input type="hidden" id="book-id">
+          <label for="book-title">Title</label>
+          <input id="book-title" name="title" maxlength="120" required>
+          <label for="book-author">Author</label>
+          <input id="book-author" name="author" maxlength="100" required>
+          <label for="book-genre">Genre</label>
+          <select id="book-genre" name="genre" required>
+            <option value="">Choose a genre</option>
+            <option>Programming</option><option>Science</option><option>Fiction</option><option>History</option><option>Technology</option>
+          </select>
+          <label for="book-isbn">ISBN (13 digits)</label>
+          <input id="book-isbn" name="isbn" inputmode="numeric" maxlength="13" required>
+          <div class="actions">
+            <button type="submit" id="save-book">Save book</button>
+            <button type="button" id="cancel-edit" class="secondary">Clear form</button>
+          </div>
+        </form>
+        <div class="panel list-panel">
+          <h3>Books in the library <span id="book-count" class="count"></span></h3>
+          <div id="book-list" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="borrowing" class="section" hidden>
+      <h2>Borrowing and returns</h2>
+      <p class="hint">Team B will implement borrowing and returning. Availability is calculated from active loans.</p>
+      <div class="grid">
+        <form id="loan-form" class="panel">
+          <h3>Borrow a book</h3>
+          <label for="loan-book">Available book</label>
+          <select id="loan-book" required></select>
+          <label for="borrower">Borrower name</label>
+          <input id="borrower" maxlength="100" required>
+          <button type="submit">Borrow for 14 days</button>
+        </form>
+        <div class="panel list-panel">
+          <h3>Current loans <span id="loan-count" class="count"></span></h3>
+          <div id="loan-list" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="shell footer">Data resets when the page is refreshed. No accounts or server are required.</footer>
+</body>
+</html>

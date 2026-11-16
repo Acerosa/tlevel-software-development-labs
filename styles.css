@@ -1,0 +1,39 @@
+:root { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: #1b3045; background: #f5f8fb; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.shell { width: min(1120px, calc(100% - 36px)); margin-inline: auto; }
+.site-header { background: #18334b; color: #fff; padding: 26px 0; }
+.site-header h1 { margin: 4px 0 6px; font-size: clamp(1.5rem, 4vw, 2.2rem); }
+.site-header p { margin: 0; color: #dfebf2; }
+.eyebrow { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.76rem; }
+.tabs { display: flex; gap: 8px; margin: 24px 0 10px; flex-wrap: wrap; }
+button { border: 0; border-radius: 8px; padding: 10px 15px; background: #0c7775; color: #fff; cursor: pointer; font: inherit; font-weight: 650; }
+button:hover { background: #075d5b; }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #e09b49; outline-offset: 2px; }
+.tab { background: #e1e9ee; color: #1b3045; }
+.tab.selected { background: #0c7775; color: #fff; }
+.section { padding-bottom: 22px; }
+.section h2 { margin-bottom: 5px; }
+.hint { color: #526879; margin-top: 0; }
+.grid { display: grid; grid-template-columns: minmax(270px, 360px) minmax(0, 1fr); gap: 18px; align-items: start; }
+.panel { border-radius: 14px; padding: 21px; background: white; border: 1px solid #dce5ec; box-shadow: 0 3px 12px rgba(18, 35, 52, 0.08); }
+.panel h3 { margin-top: 0; }
+label { display: block; font-weight: 650; margin: 15px 0 5px; }
+input, select { width: 100%; padding: 10px; border: 1px solid #9daebb; border-radius: 7px; font: inherit; background: #fff; }
+form > button { margin-top: 17px; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 17px; }
+.secondary { background: #e1e9ee; color: #1b3045; }
+.secondary:hover { background: #cbd9e3; }
+.book, .loan { border-top: 1px solid #e0e7ed; padding: 15px 0; }
+.book:first-child, .loan:first-child { border-top: 0; }
+.book strong, .loan strong { display: block; font-size: 1.04rem; }
+.meta { margin: 4px 0; color: #526879; font-size: 0.91rem; }
+.status { font-weight: 700; color: #087268; }
+.status.borrowed { color: #a64d28; }
+.inline-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 9px; }
+.inline-actions button { font-size: 0.88rem; padding: 7px 11px; }
+.count { font-weight: 500; color: #657584; }
+.feedback { min-height: 20px; color: #9f401e; font-weight: 650; }
+.feedback.success { color: #086c61; }
+.footer { padding: 28px 0 32px; color: #617383; font-size: 0.86rem; }
+@media(max-width: 780px) { .grid { grid-template-columns: 1fr; } }
